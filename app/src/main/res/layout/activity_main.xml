@@ -57,7 +57,7 @@
             app:tabTextColor="@color/colorPrimary"
             app:tabSelectedTextColor="@color/white"
             app:tabIndicatorColor="@color/white"
-            app:tabIndicatorHeight="8dp"
+            app:tabIndicatorHeight="6dp"
 
             android:id="@+id/tabs"
             android:layout_width="match_parent"
