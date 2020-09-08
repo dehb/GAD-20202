@@ -5,16 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_learing_leaders.view.*
+import com.dehb.leaderboard.ui.main.PageViewModel
+import kotlinx.android.synthetic.main.fragment_skill_leaders.view.*
+
 
 class SkillLeaderFragment : Fragment() {
-
+    val viewModel: ViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        viewModel.getSkillLeader()
     }
 
     override fun onCreateView(
@@ -23,12 +27,18 @@ class SkillLeaderFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root= inflater.inflate(R.layout.fragment_skill_leaders, container, false)
-        setUpRecycler(root.learning_recycler)
+
+        viewModel.skillLeaders.observe(viewLifecycleOwner, Observer<List<SkillIqModel>>{
+            val skillIQ = it ?: return@Observer
+            setUpRecycler(root.skill_recycler, skillIQ)
+        })
+
+
         return root
     }
-    private fun setUpRecycler(view: RecyclerView) = with(view){
+    private fun setUpRecycler(view: RecyclerView, skillData: List<SkillIqModel>) = with(view){
         layoutManager = LinearLayoutManager(context)
-        adapter = SkillRecyclerAdapter()
+        adapter = SkillRecyclerAdapter(skillData, R.layout.skill_list_item)
     }
 
 }
