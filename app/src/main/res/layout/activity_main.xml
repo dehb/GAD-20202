@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/background"
+    android:id="@+id/mainActivity"
        android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -47,6 +48,7 @@
             android:background="@drawable/button_background"
             android:layout_gravity="end|center_vertical"
             android:text="Submit"
+            android:onClick="form"
             android:textColor="@color/colorPrimary"/>
     </LinearLayout>
 

@@ -8,14 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 //import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import com.dehb.leaderboard.ViewModel
-import com.dehb.leaderboard.ui.main.PageViewModel
-import kotlinx.android.synthetic.main.fragment_learing_leaders.*
 import kotlinx.android.synthetic.main.fragment_learing_leaders.view.*
 
 class LearningLeaderFragment : Fragment() {

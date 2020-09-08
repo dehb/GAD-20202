@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.dehb.leaderboard.ui.main.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -22,5 +23,19 @@ class MainActivity : AppCompatActivity() {
         tabs.setupWithViewPager(viewPager)
 
 
+    }
+
+    fun form(view: View?) {
+        supportFragmentManager.beginTransaction().add(R.id.mainActivity,
+            SubmissionForm()
+        ).addToBackStack(null).commit()
+    }
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportFragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
     }
 }

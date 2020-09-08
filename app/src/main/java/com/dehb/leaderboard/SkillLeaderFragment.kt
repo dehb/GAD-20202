@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dehb.leaderboard.ui.main.PageViewModel
 import kotlinx.android.synthetic.main.fragment_skill_leaders.view.*
 
 
