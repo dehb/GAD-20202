@@ -49,6 +49,7 @@
             android:layout_gravity="end|center_vertical"
             android:text="Submit"
             android:onClick="form"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"/>
     </LinearLayout>
 
